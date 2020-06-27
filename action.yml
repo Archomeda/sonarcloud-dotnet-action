@@ -1,5 +1,9 @@
 name: 'SonarCloud for .NET'
+author: Archomeda
 description: 'SonarCloud for usage in .NET projects'
+branding:
+  icon: check-square
+  color: green
 inputs:
   githubToken:
     description: 'The GitHub token'
