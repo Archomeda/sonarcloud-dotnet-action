@@ -1,0 +1,30 @@
+name: 'SonarCloud for .NET'
+description: 'SonarCloud for usage in .NET projects'
+inputs:
+  githubToken:
+    description: 'The GitHub token'
+    required: false
+    default: ${{ github.token }}
+  sonarToken:
+    description: 'The token to use to authenticate with SonarCloud'
+    required: true
+  sonarOrganization:
+    description: 'The SonarCloud organization key'
+    required: true
+  sonarProject:
+    description: 'The SonarCloud project key'
+    required: true
+  sonarUrl:
+    description: 'The SonarCloud host URL (sonar.host.url)'
+    required: false
+    default: 'https://sonarcloud.io'
+  sonarProjectBaseDir:
+    description: 'The SonarCloud base project directory (sonar.projectBaseDir)'
+    required: false
+  sonarAdditionalArgs:
+    description: 'Additional SonarCloud arguments to use'
+    required: false
+runs:
+  using: node12
+  main: dist/index.js
+  post: dist/index.js
