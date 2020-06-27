@@ -12,7 +12,7 @@ async function begin() {
         const sonarAdditionalArgs = core.getInput('sonarAdditionalArgs');
 
         const context = github.context;
-        const ref = context.ref;
+        const ref = core.getInput('ref') || context.ref;
         
         await core.group('Install SonarScanner', async () => {
             await exec.exec('dotnet tool install --global dotnet-sonarscanner');

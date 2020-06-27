@@ -9,6 +9,9 @@ inputs:
     description: 'The GitHub token'
     required: false
     default: ${{ github.token }}
+  ref:
+    description: 'Custom git ref'
+    required: false
   sonarToken:
     description: 'The token to use to authenticate with SonarCloud'
     required: true
